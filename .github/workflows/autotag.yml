@@ -1,0 +1,22 @@
+name: AutoTag
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Autoadd release tag
+        uses: sbrodehl/action-autotag@v2.0.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          source_file: "src/__init__.py"
+          extraction_regex: "__version__\\s*=\\s*[\\'\"]((?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-(?:(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?:[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)[\\'\"]"
+          capture_group: 1
+          tag_message: "Release"
+          tag_format: "v{version}"

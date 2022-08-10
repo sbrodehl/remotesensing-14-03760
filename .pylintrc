@@ -1,0 +1,20 @@
+[REPORTS]
+output-format=colorized
+
+[LOGGING]
+# Format style used to check logging format string. `old` means using %
+# formatting, `new` is for `{}` formatting.
+logging-format-style=new
+
+[FORMAT]
+max-line-length=127
+
+[TYPECHECK]
+ignored-modules=cartopy,torch_lr_finder,imageio,torchsummary,tqdm,lz4,pyresample,dask,satpy,fsspec,xarray,netCDF4,skyfield,pyPublicDecompWT
+generated-members=numpy.*, torch.*
+
+[BASIC]
+min-public-methods=0
+
+[MESSAGES CONTROL]
+disable=C0103,C0413,C0302,W1203,C2801

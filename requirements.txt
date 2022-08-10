@@ -1,0 +1,33 @@
+--find-links https://download.pytorch.org/whl/lts/1.8/torch_lts.html
+Cython>=0.15.1
+GitPython
+SciencePlots
+Shapely  # needs geos system package
+batchedmoments
+cartopy>=0.18  # needs proj system package
+colored
+dask
+flake8
+fsspec==2021.9.0
+imageio
+lz4
+matplotlib
+miniflask>=2
+numpy>=1.10
+packaging
+pandas
+pyPublicDecompWT
+pykdtree
+pylint
+pyorbital
+pyproj
+pyresample
+pytest
+python-dateutil
+satpy
+scipy
+tensorboard
+torch==1.8.2+cu102
+torchvision==0.9.2+cu102
+tqdm
+xarray
