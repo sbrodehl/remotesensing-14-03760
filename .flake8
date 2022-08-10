@@ -1,0 +1,23 @@
+[flake8]
+ignore = W503
+max-complexity = 18
+max-line-length = 127
+exclude =
+    .git,
+    __pycache__,
+    docs,
+    venv,
+    build,
+    dist,
+    # submodules
+    grp
+per-file-ignores =
+    # E221 multiple spaces before operator
+    run.py: E221
+    src/__init__.py: E221
+    # E402 module level import not at top of file
+    src/data/sources/ASTRO/__init__.py: E402
+    src/data/sources/SEVIRI/__init__.py: E402
+    src/data/sources/LINET/__init__.py: E402
+    src/data/dataset/AbstractBINARYDataset.py: E402
+    dfcc/data/dataset/__init__.py: E402

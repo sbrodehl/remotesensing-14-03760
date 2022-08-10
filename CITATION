@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sebastian"
+  given-names: "Brodehl"
+  orcid: "https://orcid.org/0000-0001-8970-9523"
+title: "End-to-End Prediction of Lightning Events from Geostationary Satellite Images"
+version: 1.0.1
+date-released: 2022-06-28
+url: "https://github.com/sbrodehl/remotesensing-14-03760"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Brodehl"
+      given-names: "Sebastian"
+      orcid: "https://orcid.org/0000-0001-8970-9523"
+    - family-names: "Müller"
+      given-names: "Richard"
+      orcid: "https://orcid.org/0000-0002-0376-0393"
+    - family-names: "Schömer"
+      given-names: "Elmar"
+    - family-names: "Spichtinger"
+      given-names: "Peter"
+    - family-names: "Wand"
+      given-names: "Michael"
+  doi: "10.3390/rs14153760"
+  journal: "Remote Sensing"
+  title: "End-to-End Prediction of Lightning Events from Geostationary Satellite Images"
+  year: 2022
