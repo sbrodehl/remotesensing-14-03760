@@ -1,6 +1,6 @@
 # End-to-End Prediction of Lightning Events from Geostationary Satellite Images
 [![Python 3.9](https://img.shields.io/badge/python-3.9-brightgreen.svg)](#deep-satellite-based-detection-and-forecast-of-convective-cells)
-[![Linting Python](https://img.shields.io/github/workflow/status/sbrodehl/remotesensing-14-03760/Linting%20Python?label=linting)](https://github.com/sbrodehl/remotesensing-14-03760/actions?query=workflow%3A%22Linting+Python%22)
+[![Linting Python](https://img.shields.io/github/actions/workflow/status/sbrodehl/remotesensing-14-03760/linting-python.yml?branch=main&label=linting)](https://github.com/sbrodehl/remotesensing-14-03760/actions?query=workflow%3A%22Linting+Python%22)
 [![DOI 10.3390/rs14153760](https://img.shields.io/badge/DOI-10.3390%2Frs14153760-brightgreen)](https://doi.org/10.3390/rs14153760)
 
 This is the official repo for the paper ["End-to-End Prediction of Lightning Events from Geostationary Satellite Images"](https://doi.org/10.3390/rs14153760).
