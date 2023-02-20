@@ -21,11 +21,11 @@ from .lr_finder import LRFinder, TrainDataLoaderIter
 def main(state, event):
     train_loader = event.dataloader(subset="train", use_cache=False, deterministic=True)
     state["model"] = event.init_net()
-    state["model"] = event.optional.to_device(state["model"], altfn=lambda l: l)
-    state["model"] = event.optional.data_parallel(state["model"], altfn=lambda l: l)
+    state["model"] = event.optional.to_device(state["model"], altfn=lambda m: m)
+    state["model"] = event.optional.data_parallel(state["model"], altfn=lambda m: m)
     model_name = state["model"].__class__.__name__
     state["criterion"] = torch.nn.CrossEntropyLoss()
-    state["criterion"] = event.optional.to_device(state["criterion"], altfn=lambda l: l)
+    state["criterion"] = event.optional.to_device(state["criterion"], altfn=lambda c: c)
     criterion_name = state["criterion"].__class__.__name__
     state["optimizer"] = event.init_optimizer(state["model"])
     optimizer_name = state["optimizer"].__class__.__name__

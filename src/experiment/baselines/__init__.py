@@ -241,7 +241,7 @@ def main(state, event):  # noqa: C901 too-complex pylint: disable=too-many-state
             state["model"].load_state_dict(
                 checkpoint[f"{state['model'].__class__.__name__}"]
             )
-            state["model"] = event.optional.to_device(state["model"], altfn=lambda l: l)
+            state["model"] = event.optional.to_device(state["model"], altfn=lambda m: m)
             state["model"].eval()
             if pt_idx != 0:
                 event.step()

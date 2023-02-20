@@ -151,7 +151,7 @@ class UNet(nn.Module):
             * float(state["channel_lower_factor"])
         )
         self.pre_block = event.optional.pre_block(
-            in_planes=in_channel, out_planes=out_channel, altfn=lambda *l, **kw: None
+            in_planes=in_channel, out_planes=out_channel, altfn=lambda *a, **kw: None
         )
         if self.pre_block is not None:
             in_channel = out_channel

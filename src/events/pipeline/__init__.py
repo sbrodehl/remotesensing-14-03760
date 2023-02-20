@@ -66,10 +66,10 @@ def main(state, event):  # noqa: C901 too-complex pylint: disable=too-many-state
     train_loader = event.dataloader(subset="train")
     state["validation_dataloader"] = event.dataloader(subset="val")
     state["model"] = event.init_net()
-    state["model"] = event.optional.to_device(state["model"], altfn=lambda l: l)
-    state["model"] = event.optional.data_parallel(state["model"], altfn=lambda l: l)
+    state["model"] = event.optional.to_device(state["model"], altfn=lambda m: m)
+    state["model"] = event.optional.data_parallel(state["model"], altfn=lambda m: m)
     state["criterion"] = torch.nn.CrossEntropyLoss(reduction="none")
-    state["criterion"] = event.optional.to_device(state["criterion"], altfn=lambda l: l)
+    state["criterion"] = event.optional.to_device(state["criterion"], altfn=lambda c: c)
     Path(state["log.dir"]).mkdir(parents=True, exist_ok=True)
     with state.temporary(
         {
