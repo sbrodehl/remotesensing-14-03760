@@ -16,8 +16,6 @@
 from enum import Enum
 import logging
 
-from miniflask import like
-
 from torch.optim.lr_scheduler import OneCycleLR
 
 logger = logging.getLogger(__name__)
@@ -82,7 +80,9 @@ def register(mf):
             else 0,
             "div_factor": 10,
             "final_div_factor": 1e4,
-            "overwrite_epochs": like("epochs", alt=0),
+            "overwrite_epochs": lambda state, event: state["epochs"]
+            if "epochs" in state
+            else 0,
         }
     )
     mf.register_helpers(

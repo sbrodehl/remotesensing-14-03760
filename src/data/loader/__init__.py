@@ -15,16 +15,18 @@
 
 import torch
 
-from miniflask import like
-
 
 def register(mf):
     mf.set_scope(".")
     mf.register_defaults(
         {
             "batchsize": 32,
-            "batchsize_test": like("batchsize", alt=32),
-            "batchsize_val": like("batchsize", alt=32),
+            "batchsize_test": lambda state, event: state["batchsize"]
+            if "batchsize" in state
+            else 32,
+            "batchsize_val": lambda state, event: state["batchsize"]
+            if "batchsize" in state
+            else 32,
             "data_subset": 0,
             "drop_last": True,
             "val_prop": 0.05,

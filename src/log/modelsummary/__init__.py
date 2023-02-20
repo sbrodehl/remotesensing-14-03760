@@ -141,12 +141,7 @@ def get_summary(
     df["FMA"] = pd.to_numeric(df["macs"], errors="coerce")
     df["Params"] = pd.to_numeric(df["params"], errors="coerce")
     df["Non-trainable params"] = pd.to_numeric(df["params_nt"], errors="coerce")
-    df = df.rename(
-        columns=dict(
-            ksize="Kernel Shape",
-            out="Output Shape",
-        )
-    )
+    df = df.rename(columns={"ksize": "Kernel Shape", "out": "Output Shape"})
     df_sum = df.sum(numeric_only=True)
     df.index.name = "Layer"
 

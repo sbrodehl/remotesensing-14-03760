@@ -18,7 +18,7 @@ from functools import partial
 from torch import nn
 from torch.nn import InstanceNorm3d
 
-from miniflask import like, get_default_args
+from miniflask import get_default_args
 
 from .network import UNet as Net, PreActBlock  # pylint: disable=import-error
 
@@ -72,7 +72,11 @@ def register(mf):
             "num_bottlenecks": 1,
             "channel_lower_factor": 1.0,
             "channel_hierarchy_depth": 256,
-            "channel_bottleneck_depth": like("channel_hierarchy_depth", 256),
+            "channel_bottleneck_depth": lambda state, event: state[
+                "channel_hierarchy_depth"
+            ]
+            if "channel_hierarchy_depth" in state
+            else 256,
         }
     )
     mf.register_event("basic_block", PreActBlock, unique=True)

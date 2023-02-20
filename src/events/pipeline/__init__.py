@@ -167,7 +167,7 @@ def main(state, event):  # noqa: C901 too-complex pylint: disable=too-many-state
             LOGGER.info(f"Dataset meta file not available. ('{ds_hash_fp}')")
             list_of_batch_sizes = []
             idx = None
-            cw_training = BatchedMoments(axis=(0))
+            cw_training = BatchedMoments(axis=(0))  # pylint: disable=superfluous-parens
             with torch.no_grad():
                 tqdm_batch = tqdm(
                     desc="Warm-Up Training Batches", **state["tqdm_kwargs"]
@@ -188,7 +188,9 @@ def main(state, event):  # noqa: C901 too-complex pylint: disable=too-many-state
                 LOGGER.info(f"Class weights: {state['cw_training']}")
             else:
                 state["cw_training"] = None
-            cw_validation = BatchedMoments(axis=(0))
+            cw_validation = BatchedMoments(
+                axis=(0)
+            )  # pylint: disable=superfluous-parens
             with torch.no_grad():
                 tqdm_batch = tqdm(
                     desc="Warm-Up Validation Batches", **state["tqdm_kwargs"]
