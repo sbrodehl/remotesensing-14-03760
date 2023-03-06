@@ -32,5 +32,5 @@ class SelectTimeframe:
             if self.select_index < 0
             else self.select_index
         )
-        sample[self.pipe.name] = sample[self.pipe.name][:, s_idx : s_idx + 1, ...]
+        sample[self.pipe.name] = sample[self.pipe.name][:, s_idx: s_idx + 1, ...]
         return sample

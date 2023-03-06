@@ -297,7 +297,7 @@ class Skill:
     def generate_disc_kernel(size: int) -> np.array:
         a, b = int(size / 2), int(size / 2)
         r = int(size / 2)
-        y, x = np.ogrid[-a : size - a, -b : size - b]
+        y, x = np.ogrid[-a: size - a, -b: size - b]
         mask = x * x + y * y <= r * r
         array = np.zeros((size, size), dtype=np.longlong)
         array[mask] = 1

@@ -10,7 +10,7 @@ logging-format-style=new
 max-line-length=127
 
 [TYPECHECK]
-ignored-modules=cartopy,torch_lr_finder,imageio,torchsummary,tqdm,lz4,pyresample,dask,satpy,fsspec,xarray,netCDF4,skyfield,pyPublicDecompWT
+ignored-modules=cartopy,torch_lr_finder,imageio,batchedmoments,miniflask,torchvision,torchsummary,tqdm,lz4,pyresample,dask,satpy,fsspec,xarray,netCDF4,skyfield,pyPublicDecompWT
 generated-members=numpy.*, torch.*
 
 [BASIC]

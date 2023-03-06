@@ -123,8 +123,8 @@ def post_setup(state):
         for grp in state[f"{source}.GROUPS"]
     ]
     GROUPS = state["GROUPS"] = OrderedDict(
-        sorted({n: v for n, v in _members}.items())
-    )  # pylint: disable=unnecessary-comprehension
+        sorted({n: v for n, v in _members}.items())  # pylint: disable=unnecessary-comprehension
+    )
     channel_dict = OrderedDict(
         {ch.name: ch for _, v in state["GROUPS"].items() for ch in v}
     )

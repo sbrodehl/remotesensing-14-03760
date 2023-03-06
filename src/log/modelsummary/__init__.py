@@ -44,9 +44,9 @@ def model_summary(state, event):
         sys.exit(0)
 
 
-def get_summary(
+def get_summary(  # noqa: C901 too-complex pylint: disable=too-many-statements
     model, x, *args, **kwargs
-):  # noqa: C901 too-complex pylint: disable=too-many-statements
+):
     """Summarize the given input model.
     Summarized information are 1) output shape, 2) kernel shape,
     3) number of the parameters and 4) operations (Mult-Adds)
@@ -151,9 +151,9 @@ def get_summary(
         "display.float_format", pd.io.formats.format.EngFormatter(use_eng_prefix=True)
     )
     with option:
-        LOGGER.info(
+        LOGGER.info(  # pylint: disable=logging-not-lazy
             "\n" + df.replace(np.nan, "-").to_string()
-        )  # pylint: disable=logging-not-lazy
+        )
 
     total_params = int(df_sum["Params"] + df_sum["Non-trainable params"])
     # assume same model and input type

@@ -433,9 +433,9 @@ def stitch_composite(state, tag, composite, name="composite-results"):
     return True
 
 
-def validate(
+def validate(  # noqa: C901 too-complex pylint: disable=too-many-statements
     state, event
-):  # noqa: C901 too-complex pylint: disable=too-many-statements
+):
     if "is_training_warmup" in state and state["is_training_warmup"]:
         return
     MODEL_AVAILABLE = "model" in state
@@ -694,7 +694,7 @@ def validate(
                         .cpu()
                         .clone(),
                         sample[state["PIPES"]["SOURCE"].name][
-                            :, persistence_idx : persistence_idx + 1, -1:
+                            :, persistence_idx: persistence_idx + 1, -1:
                         ]
                         .detach()
                         .cpu()
@@ -1034,7 +1034,7 @@ def testing(state, event):  # noqa: C901 too-complex pylint: disable=too-many-st
                         .cpu()
                         .clone(),
                         sample[state["PIPES"]["SOURCE"].name][
-                            :, persistence_idx : persistence_idx + 1, -1:
+                            :, persistence_idx: persistence_idx + 1, -1:
                         ]
                         .detach()
                         .cpu()

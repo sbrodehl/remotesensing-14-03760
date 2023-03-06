@@ -343,11 +343,10 @@ class AbstractBINARYDataset:  # pylint: disable=invalid-name,too-many-instance-a
 
         return tensor
 
-    def _nested_tensor_shape(
+    def _nested_tensor_shape(  # pylint: disable=too-many-return-statements
         self, tensor
-    ) -> str:  # pylint: disable=too-many-return-statements
+    ) -> str:
         if isinstance(tensor, tuple):
-            # return f"({', '.join([self._nested_tensor_shape(t) for t in tensor])})"
             return f"({len(tensor)},)"
         if isinstance(tensor, list):
             if len(tensor) > 20:

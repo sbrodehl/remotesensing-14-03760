@@ -193,7 +193,7 @@ class UNet(nn.Module):
         self.post_block = event.optional.post_block(
             in_planes=base_ch,
             out_planes=self.source_channels,
-            altfn=lambda *l, **kw: None,
+            altfn=lambda *a, **kw: None,
         )
         in_channel = self.source_channels
         if self.post_block is None:
